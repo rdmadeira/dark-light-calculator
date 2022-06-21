@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+    <title>Light/Dark Mode - Aritmetic Calculator</title>
+</head>
+<body>
+    <main>
+        <div id="display-div">
+            <div id="switch" class="dark">
+                <div class="switch-mode light-mode-switch" id="light-switch-div">
+                    <input type="radio" name="switch" id="switch-light" value="light">
+                    <label for="switch-light">
+                        <img src="./images/sun-dark.svg" alt="dark sun icon" width="110%">
+                    </label>
+                </div>
+                <div class="switch-mode dark-mode-switch" id="dark-switch-div">
+                    <input type="radio" name="switch" id="switch-dark" value="dark" checked/>
+                    <label for="switch-dark">
+                        <img src="./images/moon-light.svg" alt="dark moon icon" width="100%">
+                    </label>
+                </div>
+            </div>
+            <div id="results">
+                <div id="operation-display"></div>
+                <div id="result-display"></div>
+            </div>      
+        </div>
+        <div class="buttons-div">
+            <div class="button tools-btn dark">AC</div>
+            <div class="button tools-btn dark">+/-</div>
+            <div class="button tools-btn dark">%</div>
+            <div class="button operator-btn dark">÷</div>
+            <div class="button dark">7</div>
+            <div class="button dark">8</div>
+            <div class="button dark">9</div>
+            <div class="button dark">×</div>
+            <div class="button dark">4</div>
+            <div class="button dark">5</div>
+            <div class="button dark">6</div>
+            <div class="button dark">-</div>
+            <div class="button dark">1</div>
+            <div class="button dark">2</div>
+            <div class="button dark">3</div>
+            <div class="button dark">+</div>
+            <div class="button dark">undo</div>
+            <div class="button dark">0</div>
+            <div class="button dark">.</div>
+            <div class="button dark">=</div>
+        </div>
+
+    </main>
+    <div>Sun icon by Icons8 - https://icons8.com/icons/set/light-sun-mode</div>
+
+
+</body>
+</html>
