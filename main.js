@@ -30,5 +30,22 @@ window.onload = ()=> {
         buttonsDiv.setAttribute('class','buttons-div buttons-div-dark');
         buttons.forEach( item => item.setAttribute('class','button dark'));
     }
+    let operationText = '';
+    const operationDisplay = document.getElementById('operation-display');
+    buttons.forEach( (item,index) => {
+        item.addEventListener('click', ()=> insertValue(index));
+    } );
     
+    function insertValue(i) {
+        const buttonValues = [...document.querySelectorAll('label.button+input[type=radio]')].map(item=>item.value);
+        operationText = operationText + buttonValues[i-1];
+        operationDisplay.textContent = operationText;
+        return operationText;
+    }    
+    const resultDisplay = document.getElementById('result-display');
+    const buttonResult = document.getElementById('button-submit');
+    buttonResult.addEventListener('click',showResult);
+    function showResult() {
+        resultDisplay.textContent = Number(operationText);
+    }
 }
