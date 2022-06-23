@@ -8,7 +8,7 @@
     <title>Light/Dark Mode - Aritmetic Calculator</title>
 </head>
 <body>
-    <main>
+    <main class="dark-main">
         <div id="display-div">
             <div id="switch" class="dark">
                 <div class="switch-mode light-mode-switch" id="light-switch-div">
@@ -29,27 +29,49 @@
                 <div id="result-display"></div>
             </div>      
         </div>
-        <div class="buttons-div">
-            <div class="button tools-btn dark">AC</div>
-            <div class="button tools-btn dark">+/-</div>
-            <div class="button tools-btn dark">%</div>
-            <div class="button operator-btn dark">÷</div>
-            <div class="button dark">7</div>
-            <div class="button dark">8</div>
-            <div class="button dark">9</div>
-            <div class="button dark">×</div>
-            <div class="button dark">4</div>
-            <div class="button dark">5</div>
-            <div class="button dark">6</div>
-            <div class="button dark">-</div>
-            <div class="button dark">1</div>
-            <div class="button dark">2</div>
-            <div class="button dark">3</div>
-            <div class="button dark">+</div>
-            <div class="button dark">undo</div>
-            <div class="button dark">0</div>
-            <div class="button dark">.</div>
-            <div class="button dark">=</div>
+        <div class="buttons-div buttons-div-dark">
+            <div class="button dark">
+                <input type="reset" name="reset" id="reset" value="AC">
+            </div>
+            <label for="señal" class="button dark">+/-</label>
+                <input type="radio" name="señal" id="señal" value="-">
+            <label class="button dark">%</label>
+                <input type="radio" name="porcent" id="porcent" value="%">
+            <label for="" class="button dark">÷</label>
+                <input type="radio" name="divide" id="divide" value="/">
+            <label for="" class="button dark">7</label>
+                <input type="radio" name="seven" id="seven" value="7">
+            <label for="" class="button dark">8</label>
+                <input type="radio" name="eight" id="eight" value="8">
+            <label for="" class="button dark">9</label>
+                <input type="radio" name="nine" id="nine" value="9">
+            <label for="" class="button dark">×</label>
+                <input type="radio" name="multiply" id="multiply" value="*">
+            <label for="" class="button dark">4</label>
+                <input type="radio" name="four" id="four" value="4">
+            <label for="" class="button dark">5</label>
+                <input type="radio" name="five" id="five" value="5">
+            <label for="" class="button dark">6</label>
+                <input type="radio" name="six" id="six" value="6">
+            <label for="" class="button dark">-</label>
+                <input type="radio" name="subtraction" id="subtraction" value="-">
+            <label for="" class="button dark">1</label>
+                <input type="radio" name="one" id="one" value="1">
+            <label for="" class="button dark">2</label>
+                <input type="radio" name="two" id="two" value="2">
+            <label for="" class="button dark">3</label>
+                <input type="radio" name="three" id="three" value="3">
+            <label for="" class="button dark">+</label>
+                <input type="radio" name="sum" id="sum" value="+">
+            <label class="button dark" for="undo">undo</label>
+                <input type="radio" name="undo" id="undo" value="undo">
+            <label for="" class="button dark">0</label>
+                <input type="radio" name="zero" id="zero" value="0">
+            <label for="" class="button dark">.</label>
+                <input type="radio" name="comma" id="comma" value=",">
+            <div for="" class="button dark">
+                <input type="submit" name="submit" id="submit" value="=">
+            </div>
         </div>
 
     </main>
