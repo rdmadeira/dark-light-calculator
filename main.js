@@ -4,6 +4,8 @@ window.onload = ()=> {
     lightSwitch.addEventListener('click', lightMode);   const main = document.querySelector('main');
     const buttonsDiv = document.querySelector('.buttons-div');
     const buttons = document.querySelectorAll('.button');
+    const operationDisplay = document.getElementById('operation-display');
+    const resultDisplay = document.getElementById('result-display');
     darkSwitch.addEventListener('click', darkMode);
     darkMode();
     function lightMode(){
@@ -17,6 +19,8 @@ window.onload = ()=> {
         main.setAttribute('class','light-main');
         buttonsDiv.setAttribute('class','buttons-div buttons-div-light');
         buttons.forEach( item => item.setAttribute('class','button light'));
+        operationDisplay.setAttribute('class','light-font');
+        resultDisplay.setAttribute('class', 'light-font');
     }
     function darkMode(){
         let checkedInput = document.querySelector('input[type="radio"]');
@@ -29,23 +33,66 @@ window.onload = ()=> {
         main.setAttribute('class','dark-main');
         buttonsDiv.setAttribute('class','buttons-div buttons-div-dark');
         buttons.forEach( item => item.setAttribute('class','button dark'));
+        operationDisplay.setAttribute('class','dark-font');
+        resultDisplay.setAttribute('class', 'dark-font');
     }
     let operationText = '';
-    const operationDisplay = document.getElementById('operation-display');
+    let result = new Number();
     buttons.forEach( (item,index) => {
-        item.addEventListener('click', ()=> insertValue(index));
+        if(index === 0) {
+            item.addEventListener('click',reset);
+        }
+        if(index === 1) {
+            item.addEventListener('click',changeSign);
+        }
+        if(index>2 && index<19 && index!==16) {
+            item.addEventListener('click', ()=> insertValue(index));
+        }
+        if(index===19){
+            item.addEventListener('click', showResult);
+        }
+        if(index===2){
+            item.addEventListener('click', ()=> percent(index));
+        }
+        
     } );
     
+    const buttonValues = [...document.querySelectorAll('label.button~input[type=radio]')].map(item=>item.value);
     function insertValue(i) {
-        const buttonValues = [...document.querySelectorAll('label.button+input[type=radio]')].map(item=>item.value);
-        operationText = operationText + buttonValues[i-1];
-        operationDisplay.textContent = operationText;
+    if(typeof operationText === 'string' || buttonValues[i-1].match('[-%+*/]')){
+            operationText = operationText + buttonValues[i-1];
+            operationDisplay.textContent = operationText;
+        } else {
+            operationText = '' + buttonValues[i-1];
+            operationDisplay.textContent = operationText;
+            resultDisplay.textContent = ''
+        }
         return operationText;
     }    
-    const resultDisplay = document.getElementById('result-display');
-    const buttonResult = document.getElementById('button-submit');
-    buttonResult.addEventListener('click',showResult);
     function showResult() {
-        resultDisplay.textContent = Number(operationText);
+        result = eval(operationText.replace('%','*1/100'));
+        resultDisplay.textContent = result;
+        operationText = result;
+        return operationText;
+    }
+    function changeSign() {
+        operationText = -(operationText);
+        result = operationText;
+        //operationDisplay.textContent = operationText;
+        resultDisplay.textContent = result;
+        return result;
+    }
+    function reset() {
+        operationText = '';
+        result = undefined;
+        operationDisplay.textContent = operationText;
+        resultDisplay.textContent = '';
+        return operationText, result;   
+    }
+    function percent(i) {
+        operationText = operationText + buttonValues[i-1];
+        operationDisplay.textContent = operationText;
+        resultDisplay.textContent = eval(operationText.replace('%','*1/100'));      
+        return operationText;
     }
 }

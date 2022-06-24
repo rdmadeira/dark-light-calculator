@@ -132,10 +132,9 @@ input[type="radio"] {
     font-size: 1em;
     color: var(--cultured);
 }
-#operation-display {
+.dark-font {
     color: var(--cultured);
 }
-#result-display {
-    color: var(--cultured);
+.light-font {
+    color: white;
 }
-
