@@ -58,6 +58,7 @@ main.light-main {
     /* align-items: center; */
     box-shadow: inset 3px 3px 10px #00131fc7, inset -7px -8px 18px #070808bf;
 }
+
 #switch {
     /* position: absolute; */
     /* z-index: 2; */
@@ -106,8 +107,9 @@ input[type="radio"] {
     background-size: 100% 128%;
 }
 .buttons-div-light {
-    background: url(./images/cream-background.jpg), hsl(0deg 12% 41% / 71%);
-    background-blend-mode: overlay;
+    /* background: url(./images/cream-background.jpg), hsl(0deg 12% 41% / 71%); */
+    /* background-blend-mode: overlay; */
+    background: #ffffff5e;
     background-size: 100% 128%;    
 }
 .button {
@@ -136,5 +138,19 @@ input[type="radio"] {
     color: var(--cultured);
 }
 .light-font {
-    color: white;
+    /* color: white; */
+    color: var(--rich-black-fogra-29);
+}
+#operation-display {
+    width: 100%;
+    padding: 2%;
+    font-size: 1.8em;
+    text-align: end;
+}
+#result-display {
+    width: 100%;
+    height: 60px;
+    padding: 2%;
+    font-size: 2.5em;
+    text-align: end;
 }

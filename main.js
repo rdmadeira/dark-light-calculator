@@ -37,6 +37,7 @@ window.onload = ()=> {
         resultDisplay.setAttribute('class', 'dark-font');
     }
     let operationText = '';
+    let operationCopy = '';
     let result = new Number();
     buttons.forEach( (item,index) => {
         if(index === 0) {
@@ -54,25 +55,39 @@ window.onload = ()=> {
         if(index===2){
             item.addEventListener('click', ()=> percent(index));
         }
+        if(index===16){
+            item.addEventListener('click',undo);
+        }
         
     } );
     
     const buttonValues = [...document.querySelectorAll('label.button~input[type=radio]')].map(item=>item.value);
     function insertValue(i) {
-    if(typeof operationText === 'string' || buttonValues[i-1].match('[-%+*/]')){
+        if(typeof operationText === 'string') {
             operationText = operationText + buttonValues[i-1];
+            if(/[-%+*/]/.test(operationText[operationText.length-2]) && /[-%+*/]/.test(buttonValues[i-1])) {
+                operationText = operationText.slice(0,-1);
+            }
             operationDisplay.textContent = operationText;
-        } else {
+        } else if(buttonValues[i-1].match('[-%+*/]')) {
+            operationText = result + buttonValues[i-1];
+            operationDisplay.textContent = operationText;
+        }
+        else {
             operationText = '' + buttonValues[i-1];
             operationDisplay.textContent = operationText;
             resultDisplay.textContent = ''
         }
+        operationCopy = operationText;
         return operationText;
     }    
     function showResult() {
         result = eval(operationText.replace('%','*1/100'));
-        resultDisplay.textContent = result;
         operationText = result;
+        resultDisplay.textContent = result;
+        if (result.toString().length >= 13) {
+            resultDisplay.textContent = result.toExponential(4);
+        }
         return operationText;
     }
     function changeSign() {
@@ -91,8 +106,24 @@ window.onload = ()=> {
     }
     function percent(i) {
         operationText = operationText + buttonValues[i-1];
+        if(/[-%+*/]/.test(operationText[operationText.length-2])) {
+        operationText = operationText.slice(0,-1);
+    }
         operationDisplay.textContent = operationText;
         resultDisplay.textContent = eval(operationText.replace('%','*1/100'));      
         return operationText;
+    }
+    function undo() {
+        if(typeof operationText === 'string') {
+            operationText = operationCopy.slice(0,-1);
+            operationCopy = operationText;
+            operationDisplay.textContent = operationText;
+            resultDisplay.textContent = '';
+            
+        } else {
+            operationText = operationCopy;
+            operationDisplay.textContent = operationCopy;
+            resultDisplay.textContent = '';
+        }
     }
 }
