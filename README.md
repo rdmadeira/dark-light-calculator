@@ -1,14 +1,17 @@
-# dark-light-calculator 
+# :hammer_and_wrench: dark-light-calculator :hammer_and_wrench: 
 
-![](./dark-screenshot.png)
-![](./lighten-screenshot.png)
+![Dark Calculator screenshot image](./dark-screenshot.png)
+:: :: ::
+![Light Calculator screenshot image](./lighten-screenshot.png)
 
-## Chalenge de JavaScript puro - Crear una Calculadora con un switch modo claro/oscuro.
+## :shield: Chalenge de JavaScript puro - Crear una Calculadora con un switch modo claro/oscuro.
 
-### Esta es una solución del desafío del curso NUCBA para armar una calculadora. Ver link https://plataforma.nucba.io/c/javascript-e51d58/todo-list-calculadora-ondemand
+:gear:  Esta es una solución del desafío del curso NUCBA para armar una calculadora. Ver link https://plataforma.nucba.io/c/javascript-e51d58/todo-list-calculadora-ondemand  :gear:
 
-### En este desafío, se armó el index.html y style.css con el conocimiento adquirido en el curso Diseño Web de NUCBA, utilizandose de label y inputs type radio ocultos, con sus valores predeterminados para cada button. 
+:gear:  En este desafío, se armó el index.html y style.css con el conocimiento adquirido en el curso Diseño Web de NUCBA, utilizandose de label y inputs type radio ocultos, con sus valores predeterminados para cada button.  :gear:
 
-### Las dificultades encontradas fueron en armar funciones distintas para cada clase de butones, numeros, operaciones, percentage y undo. Fue un desafío armar las condiciones para las distintas situaciones. Un desafío a parte armar una condición para evitar que un operador no se duplique. Y especialmente distintos comportamientos si el primer boton despues de un resultado es un numero o un operador matemático.
+## :shield: Desafíos y dificuldades:
 
-### Link: [https://rodri-dark-light-calculator.vercel.app/](https://rodri-dark-light-calculator.vercel.app/)
+:gear:  Las dificultades encontradas fueron en armar funciones distintas para cada clase de butones, numeros, operaciones, percentage y undo. Fue un desafío armar las condiciones para las distintas situaciones. Un desafío a parte armar una condición para evitar que un operador no se duplique. Y especialmente distintos comportamientos si el primer boton despues de un resultado es un numero o un operador matemático.  :gear:
+
+## :chains: Link: [https://rodri-dark-light-calculator.vercel.app/](https://rodri-dark-light-calculator.vercel.app/)
