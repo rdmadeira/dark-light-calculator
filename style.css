@@ -27,9 +27,8 @@ body {
     height: 100vh;
 }
 main {
-    width: 90vw;
-    max-width: 450px;
-    height: 90vh;
+    width: 335px;
+    height: 670px;
     /* background-image: url('./images/annie-dark-2.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat; */
@@ -48,7 +47,7 @@ main.light-main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 3vw 2vw;
+    padding: 3vw 2vw 2vw;
     background: url('./images/black-screen-2.jpg') no-repeat;
     background-size: 100% 100%;
     opacity: 0.6;
@@ -58,7 +57,12 @@ main.light-main {
     /* align-items: center; */
     box-shadow: inset 3px 3px 10px #00131fc7, inset -7px -8px 18px #070808bf;
 }
-
+.display-div-light {
+    background: url('./images/light-screen-2.jpg') no-repeat !important;
+    color: var(--rich-black-fogra-29-3);
+    box-shadow: unset !important;
+    opacity: 1 !important;
+}
 #switch {
     /* position: absolute; */
     /* z-index: 2; */
@@ -67,13 +71,15 @@ main.light-main {
     width: 40%;
     justify-content: center;
     align-items: center;
-    column-gap: 4vw;
+    column-gap: 10%;
     border-radius: 15px;
     align-self: center;
     overflow: hidden;
+    box-shadow: none;
 }
 .switch-mode {
     padding: 8%;
+    width: 100%;
 }
 input[type="radio"] {
     display: none;
@@ -84,9 +90,9 @@ input[type="radio"] {
     color: var(--cultured);
 } 
 .light {
-    background: hsl(0deg 37% 85%);
-    box-shadow: inset 4px 1px 11px hsl(0deg 0% 72%), inset -2px -2px 8px hsl(28deg 54% 33%), 2px 2px 2px #07213185;
-    color: var(--rich-black-fogra-29);
+    background: hsl(14deg 63% 68%);
+    box-shadow: inset 4px 1px 11px hsl(0deg 0% 72%), inset 2px 0px 8px hsl(233deg 80% 14%), 2px 2px 6px #072131a8;
+    color: var(--rich-black-fogra-29) !important;
 }
 .buttons-div {
     display: grid;
@@ -94,22 +100,20 @@ input[type="radio"] {
     grid-row-gap: 6%;
     grid-column-gap: 3%;
     background-position: bottom right;
-    padding: 29% 3% 10%;
+    padding: 29% 6% 10%;
     height: 60%;
-    border-radius: 30px 30px 0 0;
-    box-shadow: inset 0px 4px 5px -1px #8c969b57;
+    border-radius: 30px 30px;
+    box-shadow: inset -1px 3px 5px -1px #8c969b57;
     position: relative;
     top: 0;
 }
 .buttons-div-dark {
-    background: url(./images/annie-dark-2.jpg), hsl(198deg 8% 49% / 59%);
-    background-blend-mode: overlay;
-    background-size: 100% 128%;
+    background: #1a181838;
 }
 .buttons-div-light {
     /* background: url(./images/cream-background.jpg), hsl(0deg 12% 41% / 71%); */
     /* background-blend-mode: overlay; */
-    background: #ffffff5e;
+    background: #e36f5a;
     background-size: 100% 128%;    
 }
 .button {
@@ -132,7 +136,7 @@ input[type="radio"] {
     border: none;
     border-radius: 15px;
     font-size: 1em;
-    color: var(--cultured);
+    /* color: var(--cultured); */
 }
 .dark-font {
     color: var(--cultured);
